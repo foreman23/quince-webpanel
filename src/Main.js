@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { firestore } from './firebase'
 import { getDocs, collection } from 'firebase/firestore';
 import { Container, Row, Col } from 'react-bootstrap';
-import { List, Table, Header, Icon } from 'semantic-ui-react';
+import { Table, Header, Icon } from 'semantic-ui-react';
 
 function Main() {
 
@@ -10,7 +10,6 @@ function Main() {
     // Populate the attendance data
     const [attendanceData, setAttendanceData] = useState(null);
     const [yesCount, setYesCount] = useState(null);
-    const [noCount, setNoCount] = useState(null);
 
     const getAttendance = async () => {
         const querySnapshot = await getDocs(collection(firestore, "guests"));
@@ -33,15 +32,8 @@ function Main() {
             attendingCount += party.partyCount;
         })
 
-        // Get number of guests NOT ATTENDING
-        let not_attendingCount = 0
-        guestMap.not_attendingArr.forEach((party) => {
-            not_attendingCount += party.partyCount;
-        })
-
         setAttendanceData(guestMap);
         setYesCount(attendingCount);
-        setNoCount(not_attendingCount);
         setIsLoading(false);
     }
 
@@ -57,7 +49,6 @@ function Main() {
                 LOADING
             </div>
         )
-
     }
 
     else {
