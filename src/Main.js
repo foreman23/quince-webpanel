@@ -65,7 +65,7 @@ function Main() {
             <div>
                 <Container className='MainContainer'>
 
-                    <Container style={{ textAlign: 'start' }}>
+                    <Container className='PageHeader'>
                         <Row>
                             <Col><h1><u>Melanie Quince: RSVP Responses</u></h1></Col>
                         </Row>
@@ -83,8 +83,8 @@ function Main() {
                                     borderColor: '#f2f2f2', padding: '10px', borderRadius: 5, backgroundColor: '#e6e6e6'
                                 }}>Attending: <span style={{ color: 'blue' }}>{`${yesCount}`}</span>
                                 </h3>
-                                <Table style={{ width: '50vw', textAlign: 'center' }} celled padded>
-                                    <Table.Header>
+                                <Table className='TableContainer' style={{ textAlign: 'center' }} celled padded>
+                                    <Table.Header className='HideOnMobile'>
                                         <Table.Row>
                                             <Table.HeaderCell singleLine>Name</Table.HeaderCell>
                                             <Table.HeaderCell>Party Size</Table.HeaderCell>
@@ -123,8 +123,8 @@ function Main() {
                                     borderColor: '#f2f2f2', padding: '10px', borderRadius: 5, backgroundColor: '#e6e6e6', width: '100%'
                                 }}>NOT Attending:
                                 </h3>
-                                <Table style={{ width: '50vw', textAlign: 'center' }} celled padded>
-                                    <Table.Header>
+                                <Table className='TableContainer' style={{ textAlign: 'center' }} celled padded>
+                                    <Table.Header className='HideOnMobile'>
                                         <Table.Row>
                                             <Table.HeaderCell singleLine>Name</Table.HeaderCell>
                                             <Table.HeaderCell>Party Size</Table.HeaderCell>

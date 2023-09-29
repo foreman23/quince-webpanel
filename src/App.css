@@ -15,3 +15,27 @@
   border-width: 1px;
 }
 
+.TableContainer {
+  width: 50vw !important;
+  text-align: 'center';
+}
+
+.PageHeader {
+  text-align: start;
+}
+
+@media (max-width: 767px) {
+  .HideOnMobile {
+    display: none !important;
+  }
+  .TableContainer {
+    width: 90vw !important;
+    text-align: 'start' !important;
+  }
+  .PageHeader {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
+
