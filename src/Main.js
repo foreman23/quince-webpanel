@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { firestore } from './firebase'
+import { firestore, auth } from './firebase'
+import { useNavigate } from 'react-router-dom';
 import { getDocs, collection } from 'firebase/firestore';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Table, Header, Icon } from 'semantic-ui-react';
+import { Table, Header, Icon, Button } from 'semantic-ui-react';
 
 function Main() {
+
+    const navigate = useNavigate();
 
 
     // Populate the attendance data
@@ -37,6 +40,16 @@ function Main() {
         setIsLoading(false);
     }
 
+        
+    // Sign out current firebase user
+    const handleSignOut = () => {
+        auth.signOut()
+        .then(() => {
+            navigate('/')
+        })
+        .catch(error => alert(error.message));
+    }
+
 
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
@@ -57,6 +70,7 @@ function Main() {
                 <Container className='MainContainer'>
 
                     <Container className='PageHeader'>
+                        <Button onClick={handleSignOut}>Logout</Button>
                         <Row>
                             <Col><h1><u>Melanie Quince: RSVP Responses</u></h1></Col>
                         </Row>
