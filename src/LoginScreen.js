@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Form, Divider } from 'semantic-ui-react'
 import { Container, Col, Row } from 'react-bootstrap';
 
 
@@ -43,7 +43,10 @@ function LoginScreen() {
         <div className='LoginContainer'>
             <Container>
                 <Row>
-                    <Col>
+                    <Col style={{ backgroundColor: '#d2d2d2', padding: '20px', borderRadius: '10px' }}>
+                    <h1>Melanie Quince: RSVP Responses</h1>
+                    <h3>Please sign in below</h3>
+                    <Divider></Divider>
                         <Form className='LoginFormContainer'>
                             <Form.Field>
                                 <label>Email</label>
@@ -63,7 +66,7 @@ function LoginScreen() {
                                 autoComplete='current-password'
                                 />
                             </Form.Field>
-                            <Button onClick={handleLogin} type='submit'>Submit</Button>
+                            <Button color='blue' onClick={handleLogin} type='submit'>Submit</Button>
                         </Form>
                     </Col>
                 </Row>

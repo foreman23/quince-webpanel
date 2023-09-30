@@ -17,11 +17,12 @@ body {
   text-align: center;
   flex-direction: column;
   align-items: center;
-  margin-top: 25vh;
+  margin-top: 20vh;
   text-align: start;
 }
 
 .LoginFormContainer {
+  margin-top: 25px;
   width: 15vw;
 }
 
