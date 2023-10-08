@@ -32,7 +32,12 @@ function Main() {
         // Get number of guests ATTENDING
         let attendingCount = 0
         guestMap.attendingArr.forEach((party) => {
-            attendingCount += party.partyCount;
+            if (party.partyCount >= 0) {
+                attendingCount += party.partyCount;
+            }
+            else {
+                attendingCount += 1;
+            }
         })
 
         setAttendanceData(guestMap);
